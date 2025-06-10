@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: deliverydb
+      MYSQL_ROOT_PASSWORD: tu_clave
+    ports:
+      - "3306:3306"
